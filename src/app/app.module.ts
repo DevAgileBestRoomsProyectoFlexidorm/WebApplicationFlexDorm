@@ -10,12 +10,15 @@ import { MaterialModule } from 'src/shared/material.module';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FooterComponent,
     HeaderComponent,
+    LoginComponent,
+    
   ],
   imports: [
     BrowserModule,
