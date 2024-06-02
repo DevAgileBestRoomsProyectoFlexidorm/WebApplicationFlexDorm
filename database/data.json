@@ -1,0 +1,467 @@
+{
+  "rooms": [
+    {
+      "id": 1,
+      "student": "",
+      "arrender": "1",
+      "title": "Habitación en San Miguel",
+      "photo": "https://source.unsplash.com/random/500X500?rooms",
+      "description": "Habitación para 1 persona",
+      "price": 7,
+      "status": "rented",
+      "address": "San Miguel",
+      "nearUniversities": [
+        "UPC",
+        "PUCP",
+        "UNMSM"
+      ],
+      "availability": "Miércoles, Viernes, Domingo",
+      "startTime": "15:00",
+      "endTime": "18:00",
+      "email": "ejemplo@gmail.com",
+      "phone": "+51 123 456 789",
+      "shortDescription": "Habitación cómoda y acogedora."
+    },
+    {
+      "id": 3,
+      "student": "",
+      "arrender": "1",
+      "title": "Habitación en Barranco",
+      "photo": "https://source.unsplash.com/random/500X500?rooms",
+      "description": "Habitación para 1 persona",
+      "price": 9,
+      "status": "rented",
+      "address": "Barranco",
+      "nearUniversities": [
+        "UPC",
+        "PUCP",
+        "UNMSM"
+      ],
+      "availability": "Lunes, Miércoles, Viernes",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "email": "ejemplo3@gmail.com",
+      "phone": "+51 555 555 555",
+      "shortDescription": "Ambiente tranquilo y seguro."
+    },
+    {
+      "id": 4,
+      "student": "",
+      "arrender": "1",
+      "title": "Departamento en Surco",
+      "photo": "https://source.unsplash.com/random/500X500?rooms",
+      "description": "Departamento amoblado",
+      "price": 20,
+      "status": "free",
+      "address": "Surco",
+      "nearUniversities": [
+        "UPC",
+        "PUCP",
+        "UNMSM"
+      ],
+      "availability": "Jueves, Sábado, Domingo",
+      "startTime": "13:00",
+      "endTime": "19:00",
+      "email": "ejemplo4@gmail.com",
+      "phone": "+51 777 777 777",
+      "shortDescription": "Amplio y completamente amoblado."
+    },
+    {
+      "id": 5,
+      "student": "",
+      "arrender": "",
+      "title": "Habitación en La Molina",
+      "photo": "https://source.unsplash.com/random/500X500?rooms",
+      "description": "Habitación para 2 personas",
+      "price": 13.5,
+      "status": "free",
+      "address": "La Molina",
+      "nearUniversities": [
+        "UPC",
+        "PUCP",
+        "UNMSM"
+      ],
+      "availability": "Martes, Viernes, Sábado",
+      "startTime": "17:00",
+      "endTime": "22:00",
+      "email": "ejemplo5@gmail.com",
+      "phone": "+51 999 999 999",
+      "shortDescription": "Ideal para estudiantes."
+    },
+    {
+      "id": 6,
+      "student": "",
+      "arrender": "",
+      "title": "Casa en San Isidro",
+      "photo": "https://source.unsplash.com/random/500X500?rooms",
+      "description": "Casa grande con jardín",
+      "price": 25,
+      "status": "free",
+      "address": "San Isidro",
+      "nearUniversities": [
+        "UPC",
+        "PUCP",
+        "UNMSM"
+      ],
+      "availability": "Lunes, Miércoles, Jueves",
+      "startTime": "18:00",
+      "endTime": "23:00",
+      "email": "ejemplo6@gmail.com",
+      "phone": "+51 888 888 888",
+      "shortDescription": "Espacio tranquilo y armonioso."
+    },
+    {
+      "id": 7,
+      "student": "",
+      "arrender": "",
+      "title": "Departamento en Jesus María",
+      "photo": "https://source.unsplash.com/random/500X500?rooms",
+      "description": "Departamento con vista panorámica",
+      "price": 18,
+      "status": "free",
+      "address": "Jesus María",
+      "nearUniversities": [
+        "UPC",
+        "PUCP",
+        "UNMSM"
+      ],
+      "availability": "Miércoles, Sábado, Domingo",
+      "startTime": "14:00",
+      "endTime": "19:00",
+      "email": "ejemplo7@gmail.com",
+      "phone": "+51 666 666 666",
+      "shortDescription": "Impresionante vista de la ciudad."
+    },
+    {
+      "id": 8,
+      "student": "",
+      "arrender": "",
+      "title": "Habitación en Lince",
+      "photo": "https://source.unsplash.com/random/500X500?rooms",
+      "description": "Habitación para 1 persona",
+      "price": 10,
+      "status": "rented",
+      "address": "Lince",
+      "nearUniversities": [
+        "UPC",
+        "PUCP",
+        "UNMSM"
+      ],
+      "availability": "Martes, Jueves, Sábado",
+      "startTime": "16:00",
+      "endTime": "21:00",
+      "email": "ejemplo8@gmail.com",
+      "phone": "+51 444 444 444",
+      "shortDescription": "Cómoda y bien ubicada."
+    },
+    {
+      "id": 9,
+      "student": "",
+      "arrender": "",
+      "title": "Casa en Magdalena",
+      "photo": "https://source.unsplash.com/random/500X500?rooms",
+      "description": "Casa con piscina",
+      "price": 30,
+      "status": "free",
+      "address": "Magdalena",
+      "nearUniversities": [
+        "UPC",
+        "PUCP",
+        "UNMSM"
+      ],
+      "availability": "Jueves, Viernes, Sábado",
+      "startTime": "12:00",
+      "endTime": "20:00",
+      "email": "ejemplo9@gmail.com",
+      "phone": "+51 333 333 333",
+      "shortDescription": "Disfruta de la piscina y el sol."
+    },
+    {
+      "id": 10,
+      "student": "",
+      "arrender": "",
+      "title": "Nuevo",
+      "description": "xd",
+      "price": 2,
+      "status": "rented",
+      "nearUniversities": [
+        "UPC",
+        "PUCP"
+      ],
+      "availability": "Lunes, Martes, Miércoles",
+      "startTime": "10:00",
+      "endTime": "14:00",
+      "email": "ejemplo10@gmail.com",
+      "phone": "+51 000 000 000",
+      "shortDescription": "Económico y cómodo."
+    },
+    {
+      "id": 11,
+      "student": "",
+      "arrender": "1",
+      "title": "AAA",
+      "description": "XD",
+      "price": 333,
+      "status": "free",
+      "nearUniversities": [
+        "UPC",
+        "PUCP",
+        "UTP"
+      ],
+      "availability": "Sábado, Domingo",
+      "startTime": "08:00",
+      "endTime": "12:00",
+      "email": "ejemplo11@gmail.com",
+      "phone": "+51 999 888 777",
+      "shortDescription": "Lujo y comodidad."
+    },
+    {
+      "id": 12,
+      "arrender": "1",
+      "photo": "https://source.unsplash.com/random/500X500?rooms",
+      "title": "Habitacion en Polvos Azules",
+      "description": "Habitacion centro de lima",
+      "price": 10,
+      "status": "rented",
+      "nearUniversities": [
+        "UTP"
+      ]
+    },
+    {
+      "id": 13,
+      "arrender": "BedUsxB",
+      "status": "free",
+      "photo": "https://source.unsplash.com/random/500X500?rooms",
+      "title": "HABITACION EN LIMA",
+      "description": "HABITACION EN CENTRO LIMA",
+      "price": 7,
+      "nearUniversities": [
+        "UPC",
+        "PUCP"
+      ]
+    },
+    {
+      "id": 14,
+      "arrender": "BedUsxB",
+      "status": "free",
+      "photo": "https://source.unsplash.com/random/500X500?rooms",
+      "title": "HABITACION EN SAN ISIDRO",
+      "description": "CERCA A LA UPC SANI",
+      "price": 10,
+      "nearUniversities": [
+        "UPC"
+      ]
+    },
+    {
+      "id": 15,
+      "arrender": "BedUsxB",
+      "status": "free",
+      "photo": "https://source.unsplash.com/random/500X500?rooms",
+      "title": "HABITACION EN SAN MARTIN",
+      "description": "SAN MARTIN",
+      "price": 10,
+      "nearUniversities": [
+        "PUCP"
+      ]
+    },
+    {
+      "id": 16,
+      "arrender": "BedUsxB",
+      "status": "free",
+      "photo": "https://source.unsplash.com/random/500X500?rooms",
+      "title": "HABITACION EN LARCOMAR",
+      "description": "LARCOMAR",
+      "price": 12,
+      "nearUniversities": [
+        "ULIMA"
+      ]
+    },
+    {
+      "id": 17,
+      "arrender": "BedUsxB",
+      "status": "free",
+      "photo": "https://source.unsplash.com/random/500X500?rooms",
+      "title": "HABITACION EN CENTRO",
+      "description": "CENTRO",
+      "price": 22,
+      "nearUniversities": [
+        "UTP"
+      ]
+    },
+    {
+      "id": 18,
+      "arrender": "BedUsxB",
+      "status": "free",
+      "photo": "https://source.unsplash.com/random/500X500?rooms",
+      "title": "HABITACION EN LOS OLIVOS ",
+      "description": "LOS OLIVOS",
+      "price": 12,
+      "nearUniversities": [
+        "UNMSM"
+      ]
+    }
+  ],
+  "account": [
+    {
+      "id": "1",
+      "name": "Juan",
+      "lastname": "Perez",
+      "username": "juanp13",
+      "phone": "999888765",
+      "email": "samm85299@gmail.com",
+      "address": "Av la Marina 123",
+      "password": "12345678",
+      "profilePicture": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2080&q=80",
+      "type": "student",
+      "birthdate": "19/08/1999"
+    },
+    {
+      "email": "samm_852@hotmail.com",
+      "name": "Sebastian",
+      "lastname": "Montes",
+      "username": "Sebas123",
+      "phone": "+51924773421",
+      "address": "Av Universitaria 6107, Lima",
+      "password": "12345678",
+      "birthdate": "2023-09-30T05:00:00.000Z",
+      "profilePicture": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2080&q=80",
+      "type": "arrender",
+      "id": "BedUsxB"
+    },
+    {
+      "email": "samm11@gmail.com",
+      "name": "Sebastian",
+      "lastname": "Montes",
+      "phone": "+51924773421",
+      "address": "Av Universitaria 6107, Lima",
+      "birthdate": "2023-09-28T05:00:00.000Z",
+      "profilePicture": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2080&q=80",
+      "password": "123",
+      "type": "student",
+      "id": "m97NgfK"
+    },
+    {
+      "email": "opensource1@gmail.com",
+      "name": "Sebastian",
+      "lastname": "Montes",
+      "phone": "+51924773421",
+      "address": "Av Universitaria 6107, Lima",
+      "birthdate": "2023-09-20T05:00:00.000Z",
+      "profilePicture": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2080&q=80",
+      "password": "123",
+      "type": "student",
+      "id": "oMWHSBe"
+    },
+    {
+      "email": "samm22@gmail.com",
+      "name": "Sebastian",
+      "lastname": "Montes",
+      "phone": "+51924773421",
+      "address": "Av Universitaria 6107, Lima",
+      "birthdate": "2023-09-28T05:00:00.000Z",
+      "profilePicture": "data:image/png;base64,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",
+      "password": "123",
+      "type": "student",
+      "id": "swpy4HH"
+    },
+    {
+      "email": "123@gmail.com",
+      "name": "Sebastian",
+      "lastname": "Montes",
+      "phone": "+51924773421",
+      "address": "Av Universitaria 6107, Lima",
+      "birthdate": "2023-09-29T05:00:00.000Z",
+      "password": "123",
+      "type": "student",
+      "id": "_AG1WJB"
+    },
+    {
+      "email": "333@gmail.com",
+      "name": "Sebastian",
+      "lastname": "Montes",
+      "phone": "+51924773421",
+      "address": "Av Universitaria 6107, Lima",
+      "birthdate": "2023-09-29T05:00:00.000Z",
+      "password": "123",
+      "type": "student",
+      "id": "Qz9JrSN"
+    },
+    {
+      "email": "22@gmail.com",
+      "name": "Sebastian",
+      "lastname": "Montes",
+      "phone": "+51924773421",
+      "address": "Av Universitaria 6107, Lima",
+      "birthdate": "2023-09-28T05:00:00.000Z",
+      "password": "123",
+      "profilePicture": "https://img.freepik.com/foto-gratis/retrato-joven-sonriente-gafas_171337-4842.jpg",
+      "type": "student",
+      "id": "j2dXjtR"
+    },
+    {
+      "email": "222@gmail.com",
+      "name": "Sebastian",
+      "lastname": "Montes",
+      "phone": "+51924773421",
+      "address": "Av Universitaria 6107, Lima",
+      "birthdate": "2023-09-27T05:00:00.000Z",
+      "password": "12345678",
+      "profilePicture": "https://img.freepik.com/foto-gratis/retrato-joven-sonriente-gafas_171337-4842.jpg",
+      "username": "sebas sebas",
+      "type": "student",
+      "id": "owXt3vF"
+    }
+  ],
+  "rental": [
+    {
+      "id": "1",
+      "arrender": "",
+      "student": "",
+      "room": "",
+      "date": "",
+      "hourInit": "",
+      "hourFinal": "",
+      "finalPrice": "",
+      "observation": ""
+    },
+    {
+      "date": "2023-09-23",
+      "hourInit": "08:00",
+      "hourFinal": "15:00",
+      "email": "samm85299@gmail.com",
+      "phone": "+51924773421",
+      "observation": "ninguna",
+      "student": "1",
+      "room": 1,
+      "finalPrice": 60,
+      "roomImage": "https://source.unsplash.com/random/500X500?rooms",
+      "id": "OtNveSU"
+    },
+    {
+      "date": "2023-09-23",
+      "hourInit": "10:00",
+      "hourFinal": "13:00",
+      "email": "samm85299@gmail.com",
+      "phone": "+51924773421",
+      "observation": "ninguna",
+      "student": "1",
+      "room": 4,
+      "finalPrice": 60,
+      "roomImage": "https://source.unsplash.com/random/500X500?rooms",
+      "id": "kwNDseC"
+    },
+    {
+      "date": "2023-09-30",
+      "hourInit": "09:00",
+      "hourFinal": "12:00",
+      "email": "samm85299@gmail.com",
+      "phone": "+51924773421",
+      "observation": "Ninguna observacion",
+      "student": "1",
+      "room": 1,
+      "finalPrice": 21,
+      "roomImage": "https://source.unsplash.com/random/500X500?rooms",
+      "id": "jLBpWey"
+    }
+  ]
+}
