@@ -1,0 +1,90 @@
+<div class="background-image">
+  <div class="login-card">
+    <form (submit)="onSubmit()" [formGroup]="registrationForm">
+      <h2><a style="color: black;">Bienvenido a </a><a style="color: rgb(113, 44, 204);">FlexiDorm</a></h2>
+      <div >
+        <button  class="boton" id="studentboton" (click)="studentfalse()">Soy estudiante</button>
+        <button  class="boton" id="arrendarboton" (click)="arrendarfalse()">Soy Arrendador</button>
+      </div>
+      <div>
+        <h3 style="text-align:left; color:black; padding-left:40px;">Ingresa tus datos para empezar</h3>
+        </div>
+      <div class="form-group" *ngIf="student">
+        <input type="text" placeholder="Ingresa tu correo Institucional" name="email" id="email" formControlName="email">
+        <div *ngIf="registrationForm.get('email')?.invalid && (registrationForm.get('email')?.dirty || registrationForm.get('email')?.touched)">
+          <div *ngIf="registrationForm.get('email')?.hasError('required')" style="color: red;">El correo electrónico es requerido.</div>
+          <div *ngIf="registrationForm.get('email')?.hasError('email')" style="color: red;">El correo electrónico debe ser válido.</div>
+        </div>
+      </div>
+      <div class="form-group" *ngIf="arrendar">
+        <input type="text" placeholder="Ingresa tu correo Electronico" name="email" id="email2" formControlName="email">
+        <div *ngIf="registrationForm.get('email')?.invalid && (registrationForm.get('email')?.dirty || registrationForm.get('email')?.touched)">
+          <div *ngIf="registrationForm.get('email')?.hasError('required')" style="color: red;">El correo electrónico es requerido.</div>
+          <div *ngIf="registrationForm.get('email')?.hasError('email')" style="color: red;">El correo electrónico debe ser válido.</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <input type="password" placeholder="Ingresa tu Contraseña" name="password" id="password" formControlName="password">
+        <div *ngIf="registrationForm.get('password')?.invalid && (registrationForm.get('password')?.dirty || registrationForm.get('password')?.touched)">
+          <div *ngIf="registrationForm.get('password')?.hasError('required')" style="color: red;">Debes ingresar tu password.</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <input type="text" placeholder="Ingresa el enlace de tu foto" name="profilePicture" id="profilePicture" formControlName="profilePicture">
+        <div *ngIf="registrationForm.get('profilePicture')?.invalid && (registrationForm.get('profilePicture')?.dirty || registrationForm.get('profilePicture')?.touched)">
+          <div *ngIf="registrationForm.get('profilePicture')?.hasError('required')" style="color: red;">Debes ingresar el enlace de tu foto.</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <input type="text" placeholder="Ingresa tu username" name="username" id="username" formControlName="username">
+        <div *ngIf="registrationForm.get('username')?.invalid && (registrationForm.get('username')?.dirty || registrationForm.get('username')?.touched)">
+          <div *ngIf="registrationForm.get('username')?.hasError('required')" style="color: red;">Debes ingresar tu username.</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <input type="text" placeholder="Ingresa tu Nombre" name="firstname" id="name" formControlName="firstname">
+        <div *ngIf="registrationForm.get('name')?.invalid && (registrationForm.get('name')?.dirty || registrationForm.get('name')?.touched)">
+          <div *ngIf="registrationForm.get('name')?.hasError('required')" style="color: red;">Debes ingresar tu nombre.</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <input type="text" placeholder="Ingresa tu Apellido" name="lastname" id="lastname" formControlName="lastname">
+        <div *ngIf="registrationForm.get('lastname')?.invalid && (registrationForm.get('lastname')?.dirty || registrationForm.get('lastname')?.touched)">
+          <div *ngIf="registrationForm.get('lastname')?.hasError('required')" style="color: red;">Debes ingresar tu apellido.</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <input type="text" placeholder="Ingresa tu número Celular" name="phoneNumber" id="phoneNumber" formControlName="phoneNumber">
+        <div *ngIf="registrationForm.get('phone')?.invalid && (registrationForm.get('phone')?.dirty || registrationForm.get('phone')?.touched)">
+          <div *ngIf="registrationForm.get('phone')?.hasError('required')" style="color: red;">Debes ingresar tu número de teléfono.</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <input type="text" placeholder="Ingresa tu direccón" name="address" id="address" formControlName="address">
+        <div *ngIf="registrationForm.get('address')?.invalid && (registrationForm.get('address')?.dirty || registrationForm.get('address')?.touched)">
+          <div *ngIf="registrationForm.get('address')?.hasError('required')" style="color: red;">Debes ingresar tu dirección de domicilio.</div>
+        </div>
+      </div>
+      <div class="form-group2">
+        <input matInput [matDatepicker]="picker" placeholder="Fecha de Nacimiento" readonly name="birthDate" formControlName="birthDate">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+        <div *ngIf="registrationForm.get('birthDate')?.invalid && (registrationForm.get('birthDate')?.dirty || registrationForm.get('birthDate')?.touched)">
+          <div *ngIf="registrationForm.get('birthDate')?.hasError('required')" style="color: red;">Debes seleccionar tu fecha de nacimiento.</div>
+        </div>
+        </div>
+      <div class="form-group" *ngIf="arrendar" id="crearArrendar">
+        <button type="submit">Crear Cuenta</button>
+      </div>
+      <div class="form-group" *ngIf="student" id="crearStudent">
+        <button type="submit" >Crear Cuenta</button>
+      </div>
+      <div>
+        ¿Tienes una cuenta?
+        </div>
+        <div>
+          <a routerLink="/login">Inicia sesión</a>
+          </div>
+    </form>
+  </div>
+</div>

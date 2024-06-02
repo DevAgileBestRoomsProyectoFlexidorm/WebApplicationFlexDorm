@@ -1,0 +1,118 @@
+.background-image {
+  background-image: url('https://i.imgur.com/JikLnIn.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  height: 100vh;
+  padding-right: 200px;
+}
+h2{
+  padding-top: 30px;
+  color: #ffffff;
+  font-size: 33px;
+}
+
+.login-card {
+  background-color: rgb(255, 255, 255);
+  padding: 20px;
+  margin-bottom: 100px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  width: 80%; /* Ajusta el ancho según tus necesidades */
+  height: 80%; /* Ajusta el alto según tus necesidades */
+  max-width: 400px; /* Ajusta el ancho máximo según tus necesidades */
+  max-height: 1200px; /* Ajusta la altura máxima según tus necesidades */
+  text-align: center;
+  overflow: auto; /* Añade desplazamiento si el contenido es demasiado largo */
+}
+
+/* Estilos adicionales según sea necesario */
+.form-group {
+  margin-bottom: 5px;
+}
+
+.form-group input {
+  width: 70%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.form-group button {
+  width: 72%;
+  padding: 15px;
+  background-color: #670abe; /* Color de fondo del botón */
+  color: #ffffff; /* Color de texto del botón */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.form-group button:hover {
+  background-color: #670abe; /* Cambia el color de fondo en el hover */
+}
+
+.forgotpassword{
+  color: #ffffff;
+}
+
+.registerview{
+  color: #ffffff;
+}
+
+a{
+  color:#670abe;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.boton {
+  color: #fff;
+  border: none;
+  padding: 10px 30px;
+  margin: 20px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.boton:hover {
+  background-color: #670abe;
+}
+
+.boton.clicked {
+  background-color: #670abe;
+}
+
+
+.form-group2 {
+  margin-bottom: 15px;
+  align-items: center;
+}
+
+.form-group2 input {
+  width: 58%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.form-group2 button {
+  width: 72%;
+  padding: 10px;
+  background-color: #670abe; /* Color de fondo del botón */
+  color: #ffffff; /* Color de texto del botón */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.form-group2 button:hover {
+  background-color: #670abe; /* Cambia el color de fondo en el hover */
+}

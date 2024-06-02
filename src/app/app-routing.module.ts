@@ -4,7 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 // import { FavoriteListComponent } from './components/favorite-list/favorite-list.component';
 // import { ProfileComponent } from './components/profile/profile.component';
  import { LoginComponent } from './components/login/login.component';
-// import { RegisterComponent } from './components/register/register.component';
+import { RegisterComponent } from './components/register/register.component';
 // import { RoomDetailComponent } from './components/room-detail/room-detail.component';
 // import { RoomActiveComponent } from './components/room-active/room-active.component';
 // import { ReservasStudentComponent } from './components/reservas-student/reservas-student.component';
@@ -19,7 +19,7 @@ const routes: Routes = [
    {path:'login',component:LoginComponent},
   // {path: 'rental/student', component:ReservasStudentComponent},
   // {path: 'rental/arrender', component:ReservasArrenderComponent},
-  // {path:'register',component:RegisterComponent},
+  {path:'register',component:RegisterComponent},
   // { path: 'all-rooms/:id', component: RoomDetailComponent },
   // {path: 'moviment/student',component:MovimentStudentComponent},
   // {path: 'moviment/arrender',component:MovimentArrenderComponent},
