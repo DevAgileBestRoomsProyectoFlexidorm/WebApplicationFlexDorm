@@ -1,0 +1,66 @@
+.background-image {
+  background-image: url('https://i.imgur.com/JikLnIn.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+h2{
+  padding-top: 30px;
+  color: #ffffff;
+  font-size: 33px;
+}
+
+.login-card {
+  background-color: rgb(117, 79, 206);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  width: 80%; /* Ajusta el ancho según tus necesidades */
+  height: 80%; /* Ajusta el alto según tus necesidades */
+  max-width: 300px; /* Ajusta el ancho máximo según tus necesidades */
+  max-height: 410px; /* Ajusta la altura máxima según tus necesidades */
+  text-align: center;
+  overflow: auto; /* Añade desplazamiento si el contenido es demasiado largo */
+}
+
+/* Estilos adicionales según sea necesario */
+.form-group {
+  margin-bottom: 15px;
+  padding-top: 20px;
+}
+
+.form-group input {
+  width: 70%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.form-group button {
+  width: 72%;
+  padding: 10px;
+  background-color: #f7f7f7; /* Color de fondo del botón */
+  color: #4f1fd3; /* Color de texto del botón */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.form-group button:hover {
+  background-color: #ffffff; /* Cambia el color de fondo en el hover */
+}
+
+.forgotpassword{
+  color: #ffffff;
+}
+
+.registerview{
+  color: #ffffff;
+}
+
+a{
+  color:#ffffff;
+}

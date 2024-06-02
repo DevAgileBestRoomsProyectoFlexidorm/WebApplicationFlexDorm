@@ -1,0 +1,54 @@
+mat-card{
+    margin: 20px;
+}
+
+
+label{
+    color: black;
+}
+
+input{
+    color: rgb(58, 58, 58);
+    width: 100%;
+}
+
+p{
+    color: rgb(58, 58, 58);
+}
+
+mat-card{
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 30px;
+}
+
+.profile-picture{
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    margin: 20px;
+}
+
+.content {
+    display: flex;
+    flex-wrap: wrap;  
+    justify-content: space-between; 
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.item{
+    width: calc(40% - 10px);
+    padding: 20px;
+    margin: 5px;
+}
+
+.button-purple {
+    background-color: #a070ce !important;
+    color: white !important;
+    width: 100px;
+    align-self: center;
+    margin: 20px;
+}

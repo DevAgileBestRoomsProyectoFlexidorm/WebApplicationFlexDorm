@@ -1,0 +1,67 @@
+<mat-toolbar color="primary" class="mat-elevation-z8">
+  <mat-toolbar-row>
+    <button (click)="drawer.toggle()" mat-icon-button *ngIf="!isLoginPage">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span class="title">FLEXIDORM</span>
+    <div class="user-container" *ngIf="!isLoginPage">
+      <div class="user-info">
+        <span class="fullname">
+          <b>{{userData.firstname}} {{userData.lastname}}</b>
+          @{{userData.username}}
+        </span>
+      </div>
+      <img class="profile-icon" src={{userData.profilePicture}} alt="user avatar" >
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<mat-drawer-container class="drawer-class" >
+  <mat-drawer #drawer opened="false" mode="side" position="start">
+    <mat-nav-list class="custom-nav-list">
+      <div class="nav-container">
+        <div class="nav-item" routerLinkActive="is-active" *ngIf="studentNav">
+          <mat-icon class="colorIcon">home</mat-icon>
+          <a mat-list-item routerLink="/all-rooms" >Habitaciones Disponibles</a>
+        </div>
+        <div class="nav-item" routerLinkActive="is-active" *ngIf="arrenderNav">
+          <mat-icon class="colorIcon">home</mat-icon>
+          <a mat-list-item routerLink="/rooms" >Mis Habitaciones</a>
+        </div>
+        <div class="nav-item" routerLinkActive="is-active" *ngIf="studentNav">
+          <mat-icon class="colorIcon">star_rate</mat-icon>
+        <a mat-list-item routerLink="/favorites">Favoritos</a>
+        </div>
+        <div class="nav-item" routerLinkActive="is-active" *ngIf="studentNav">
+          <mat-icon class="colorIcon">calendar_month</mat-icon>
+        <a mat-list-item routerLink="/rental/student">Mis Reservas</a>
+      </div>
+      <div class="nav-item" routerLinkActive="is-active" *ngIf="arrenderNav">
+        <mat-icon class="colorIcon">calendar_month</mat-icon>
+      <a mat-list-item routerLink="/rental/arrender">Mis Reservas</a>
+    </div>
+      <div class="nav-item" routerLinkActive="is-active">
+        <mat-icon class="colorIcon">perm_identity</mat-icon>
+        <a mat-list-item routerLink="/profile">Mi Perfil</a>
+      </div>
+      <div class="nav-item" routerLinkActive="is-active" *ngIf="arrenderNav">
+        <mat-icon class="colorIcon">wallet</mat-icon>
+        <a mat-list-item routerLink="/moviment/arrender">Mis Movimientos</a>
+      </div>
+      <div class="nav-item" routerLinkActive="is-active" *ngIf="studentNav">
+        <mat-icon class="colorIcon">wallet</mat-icon>
+        <a mat-list-item routerLink="/moviment/student">Mis Movimientos</a>
+      </div>
+      <div class="nav-item" routerLinkActive="is-active" (click)="drawer.toggle()" (click)="logout()">
+        <mat-icon class="colorIcon">power_settings_new</mat-icon>
+        <a mat-list-item  routerLink="/login">Log Out</a>
+      </div>
+      </div>
+    </mat-nav-list>
+  </mat-drawer>
+  <mat-drawer-content>
+    <div style="min-height: 600px">
+      <router-outlet />
+    </div>
+  </mat-drawer-content>
+</mat-drawer-container>
