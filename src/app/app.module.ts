@@ -16,6 +16,7 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { RoomDetailComponent} from "./components/room-detail/room-detail.component";
 import { RoomDialogComponent } from './components/room-dialog/room-dialog.component';
 import { RoomListComponent } from './components/room-list/room-list.component';
+import { RoomActiveComponent } from './components/room-active/room-active.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { RoomListComponent } from './components/room-list/room-list.component';
     ProfileComponent,
     RoomDetailComponent,
     RoomDialogComponent,
-    RoomListComponent
+    RoomListComponent,
+    RoomActiveComponent
 
   ],
   imports: [
