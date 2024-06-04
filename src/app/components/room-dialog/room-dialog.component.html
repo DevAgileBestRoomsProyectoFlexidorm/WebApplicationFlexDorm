@@ -1,0 +1,135 @@
+<div class="form-container">
+  <!-- TITULO DEL DIALOG -->
+  <h1 mat-dialog-title>Registrar nueva habitación</h1>
+  <mat-dialog-content>
+    <!-- DESCRIPCION -->
+    <p>Ingresa los datos de la habitación</p>
+
+    <form [formGroup]="form">
+      <mat-form-field appearance="fill">
+        <mat-label>Título de la publicación</mat-label>
+        <mat-icon matPrefix>text_fields</mat-icon>
+        <input matInput required formControlName="title" />
+        <mat-error>El título es requerido</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Descripción</mat-label>
+        <mat-icon matPrefix>edit_note</mat-icon>
+        <textarea
+          matInput
+          required
+          rows="3"
+          formControlName="description"
+        ></textarea>
+        <mat-error>La descripción es requerida</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Address</mat-label>
+        <mat-icon matPrefix>address</mat-icon>
+        <textarea
+          matInput
+          required
+          rows="1"
+          formControlName="address"
+        ></textarea>
+        <mat-error>La dirección es requerida</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Image Room</mat-label>
+        <mat-icon matPrefix>image</mat-icon>
+        <textarea
+          matInput
+          required
+          rows="2"
+          formControlName="imageUrl"
+        ></textarea>
+        <mat-error>La URL de la imagen referencial es necesaria</mat-error>
+      </mat-form-field>
+
+
+      <div class="inputs-container">
+        <mat-form-field appearance="fill">
+          <mat-label>Precio por hora</mat-label>
+          <mat-icon matPrefix>payments</mat-icon>
+          <input matInput required type="number" formControlName="price" />
+          <mat-error>Indique un precio válido</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Universidades cerca</mat-label>
+          <mat-icon matPrefix>school</mat-icon>
+          <mat-select multiple formControlName="nearUniversities">
+            <mat-option
+              *ngFor="let university of universities"
+              [value]="university"
+            >
+              {{ university }}
+            </mat-option>
+          </mat-select>
+          <mat-error>Indique las universidades</mat-error>
+        </mat-form-field>
+      </div>
+
+      <!--
+      <div class="inputs-container">
+        <mat-form-field appearance="fill">
+          <mat-label>Fecha inicio</mat-label>
+          <input
+            matInput
+            [ngxMatDatetimePicker]="picker"
+            formControlName="startDate"
+          />
+          <mat-datepicker-toggle
+            matSuffix
+            [for]="$any(picker)"
+          />
+          <ngx-mat-datetime-picker #picker [enableMeridian]="true" />
+          <mat-error>Indique una fecha válida</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Fecha fin</mat-label>
+          <input
+            matInput
+            [ngxMatDatetimePicker]="picker2"
+            formControlName="endDate"
+          />
+          <mat-datepicker-toggle
+            matSuffix
+            [for]="$any(picker2)"
+          />
+          <ngx-mat-datetime-picker #picker2 [enableMeridian]="true" />
+          <mat-error>Indique una fecha válida</mat-error>
+          <mat-hint *ngIf="form.hasError('dateRangeInvalid')" style="color: red;">
+            La fecha de fin no puede ser menor que la fecha de inicio.
+          </mat-hint>
+        </mat-form-field>
+      </div> -->
+
+      <br />
+
+      <div class="inputs-container">
+        <button
+          mat-stroked-button
+          color="primary"
+          (click)="dialogRef.close(false)"
+        >
+          Cancelar
+        </button>
+        <button
+          mat-raised-button
+          color="primary"
+          (click)="registerRoom()"
+          [disabled]="form.invalid"
+        >
+          Agregar
+        </button>
+      </div>
+
+      <br />
+    </form>
+  </mat-dialog-content>
+</div>
