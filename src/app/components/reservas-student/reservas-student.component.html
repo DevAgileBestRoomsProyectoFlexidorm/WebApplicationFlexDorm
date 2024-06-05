@@ -1,0 +1,25 @@
+<div class="container responsive-grid">
+  <mat-card *ngFor="let card of rentCards">
+    <img mat-card-image [src]="card.imageUrl" loading="lazy" />
+    <mat-card-header>
+      <mat-card-title>Reserva para {{ card.date }} </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <br />
+      <p>
+       Hora Inicial {{ card.hourInit }}
+      </p>
+      <p>
+        Hora Final {{ card.hourFinal }}
+       </p>
+       <mat-slide-toggle [(ngModel)]="card.favorite" (change)="onToggleFavorite(card.reservationId)">
+        Favorito
+      </mat-slide-toggle>
+      <p class="align-center">
+        <mat-icon>payments</mat-icon> &nbsp; Precio Total: S/ {{ card.totalPrice }}
+      </p>
+    </mat-card-content>
+    <br />
+  </mat-card>
+</div>
+

@@ -1,0 +1,52 @@
+.container {
+  padding: 24px;
+}
+
+img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.responsive-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 24px;
+}
+
+.actions-container {
+  display: flex;
+  justify-content: center; /* center horizontally */
+  align-items: center; /* center vertically */
+}
+
+.align-center {
+  display: flex; /* Utiliza flexbox para alinear verticalmente */
+  align-items: center; /* Centra verticalmente los elementos dentro del contenedor */
+  color: #a070ce;
+  font-size: large;
+}
+
+.button-purple {
+  background-color: #a070ce !important;
+  color: white !important;
+}
+
+.outlined-chip {
+  border: 1px solid #ccc; /* Borde de 1 píxel sólido */
+  background-color: transparent !important; /* Fondo transparente */
+}
+mat-chip {
+  justify-content: space-between;
+}
+
+.circle {
+  font-size: large;
+}
+
+.button-container {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center; /* center horizontally */
+  align-items: center; /* center vertically */
+}
