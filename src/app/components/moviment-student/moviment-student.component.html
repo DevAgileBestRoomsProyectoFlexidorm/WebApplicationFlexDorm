@@ -1,0 +1,14 @@
+<div class="container responsive-grid">
+  <div *ngFor="let card of rentCards" class="list-item">
+    <img [src]="card.imageUrl" loading="lazy" class="list-item-image" />
+    <div class="list-item-content">
+      <h3>Movimiento realizado el dia</h3>
+      <h3>{{ card.date }}</h3>
+      <p>Hora Inicial {{ card.hourInit }}</p>
+      <p>Hora Final {{ card.hourFinal }}</p>
+      <p class="align-center">
+        <mat-icon>payments</mat-icon> &nbsp; Precio Total: S/ {{ card.totalPrice }}
+      </p>
+    </div>
+  </div>
+</div>

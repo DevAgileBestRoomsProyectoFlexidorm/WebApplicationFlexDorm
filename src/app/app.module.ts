@@ -13,6 +13,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { ProfileComponent } from './components/profile/profile.component';
+import { RoomDetailComponent} from "./components/room-detail/room-detail.component";
+import { RoomDialogComponent } from './components/room-dialog/room-dialog.component';
+import { RoomListComponent } from './components/room-list/room-list.component';
+import { RoomActiveComponent } from './components/room-active/room-active.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +25,12 @@ import { ProfileComponent } from './components/profile/profile.component';
     HeaderComponent,
     LoginComponent,
     RegisterComponent,
-    ProfileComponent
+    ProfileComponent,
+    RoomDetailComponent,
+    RoomDialogComponent,
+    RoomListComponent,
+    RoomActiveComponent
+
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,51 @@
+<div *ngIf="roomData && roomData.length > 0" class="container responsive-grid">
+  <mat-card class="full-card">
+    <form (ngSubmit)="submitReservation(rentalData)">
+    <mat-card-content class="content-container">
+      <div class="title-section">
+        <h1>{{ roomData[0].title }}</h1>
+        <h5>
+          {{ roomData[0].description }}
+          &nbsp;
+          <mat-icon class="mat-icon-color">payments</mat-icon>
+          &nbsp; S/ <span class="mat-icon-color">{{ roomData[0].price }}</span> / hora
+        </h5>
+      </div>
+      <div class="container">
+        <div class="align-center">
+          <img mat-card-image [src]="roomData[0].imageUrl" loading="lazy" width="400" height="300" />
+        </div>
+
+        <div class="info-section">
+
+            <label>Fecha de Renta</label>
+            <input class="item" type="date" name="date" [(ngModel)]="rentalData.date" required>
+
+              <label>Hora Inicio</label>
+              <input class="item" type="time" name="hourInit" [(ngModel)]="rentalData.hourInit" placeholder="" required>
+
+            <label>Hora Final</label>
+            <input class="item" type="time" name="hourFinal" [(ngModel)]="rentalData.hourFinal" placeholder="" required>
+
+            <label>Correo Electronico</label>
+            <input class="item"  type="email" name="email" [(ngModel)]="rentalData.email" placeholder="" required>
+            <label>Número de Teléfono</label>
+            <input class="item" type="text" name="phone" [(ngModel)]="rentalData.phone" placeholder="" required>
+            <label>Observaciones</label>
+            <input class="item" type="text" name="observation" [(ngModel)]="rentalData.observation" placeholder="" required>
+            <label>Monto de Renta</label>
+            <input class="item" type="text" name="totalPrice" [(ngModel)]="rentalData.totalPrice" required readonly>
+
+        </div>
+      </div>
+    </mat-card-content>
+    <div style="text-align: center;">
+      <a>Horas estimadas desde las 00:00 y 24:00 horas</a>
+      </div>
+    <mat-card-actions class="action-container">
+    <button mat-raised-button class="button-purple" type="submit">Reservar</button>
+    <button mat-raised-button class="button-purple" routerLink="/all-rooms">Volver</button>
+  </mat-card-actions>
+  </form>
+  </mat-card>
+</div>
