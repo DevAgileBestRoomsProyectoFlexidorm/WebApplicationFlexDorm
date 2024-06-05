@@ -9,27 +9,38 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from 'src/shared/material.module';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
+import { RoomListComponent } from './components/room-list/room-list.component';
+import { FavoriteListComponent } from './components/favorite-list/favorite-list.component';
+import { RoomDialogComponent } from './components/room-dialog/room-dialog.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ProfileComponent } from './components/profile/profile.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
-import { ProfileComponent } from './components/profile/profile.component';
-import { RoomDetailComponent} from "./components/room-detail/room-detail.component";
-import { RoomDialogComponent } from './components/room-dialog/room-dialog.component';
-import { RoomListComponent } from './components/room-list/room-list.component';
+import { RoomDetailComponent } from './components/room-detail/room-detail.component';
 import { RoomActiveComponent } from './components/room-active/room-active.component';
+import { ReservasStudentComponent } from './components/reservas-student/reservas-student.component';
+import { ReservasArrenderComponent } from './components/reservas-arrender/reservas-arrender.component';
+import { MovimentArrenderComponent } from './components/moviment-arrender/moviment-arrender.component';
+import { MovimentStudentComponent } from './components/moviment-student/moviment-student.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     FooterComponent,
     HeaderComponent,
+    RoomListComponent,
+    FavoriteListComponent,
+    RoomDialogComponent,
+    ProfileComponent,
     LoginComponent,
     RegisterComponent,
-    ProfileComponent,
     RoomDetailComponent,
-    RoomDialogComponent,
-    RoomListComponent,
-    RoomActiveComponent
+    RoomActiveComponent,
+    ReservasStudentComponent,
+    ReservasArrenderComponent,
+    MovimentArrenderComponent,
+    MovimentStudentComponent
 
   ],
   imports: [

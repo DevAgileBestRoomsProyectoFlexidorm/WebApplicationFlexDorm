@@ -99,7 +99,7 @@ export class RegisterComponent {
           }
 
           if (response.status === ApiResponseStatus.Error) {
-            this.openSnackBar(`Error al registrar el usuario: ${response.message}`, 'Ok');
+            this.openSnackBar(`${response.data.message}`, 'Ok');
           }
         },
       });

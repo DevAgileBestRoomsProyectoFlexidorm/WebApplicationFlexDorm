@@ -33,7 +33,7 @@ export class LoginComponent {
       },
       error: (err) => {
         console.error('Error en el inicio de sesión:', err);
-        this.loginError = `Se produjo un error durante el inicio de sesión. Por favor, inténtalo de nuevo más tarde. (error: ${err})`;
+        this.openSnackBar(`Se produjo un error durante el inicio de sesión. Por favor, inténtalo de nuevo más tarde. (error: ${err})`);
       },
     });
   }

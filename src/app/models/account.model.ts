@@ -15,10 +15,11 @@ export class Account {
   isVerified:boolean;
   isEnabled:boolean;
   token: string;
+  message: string;
 
   constructor(userId: number, firstname: string, lastname: string, username: string, phoneNumber: string, email: string,
     address: string, profilePicture: string, password: string, dtype: Dtype, birthDate: string,
-    gender: string, university: string, isVerified: boolean, isEnabled: boolean, token: string) {
+    gender: string, university: string, isVerified: boolean, isEnabled: boolean, token: string, message:string) {
     this.userId = userId;
     this.firstname = firstname;
     this.lastname = lastname;
@@ -35,6 +36,7 @@ export class Account {
     this.isVerified = isVerified;
     this.isEnabled = isEnabled;
     this.token = token;
+    this.message=message;
     }
 
 }
