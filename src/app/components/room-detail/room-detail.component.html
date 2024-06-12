@@ -17,25 +17,29 @@
         </div>
 
         <div class="info-section">
+            <label>Fecha de Inicio</label>
+            <input class="item" type="date" name="startDate" [(ngModel)]="rentalData.startDate" required>
 
-            <label>Fecha de Renta</label>
-            <input class="item" type="date" name="date" [(ngModel)]="rentalData.date" required>
+            <label>Fecha de Fin</label>
+            <input class="item" type="date" name="endDate" [(ngModel)]="rentalData.endDate" required>
 
-              <label>Hora Inicio</label>
-              <input class="item" type="time" name="hourInit" [(ngModel)]="rentalData.hourInit" placeholder="" required>
+            <label>Hora Inicio</label>
+            <input class="item" type="time" name="hourInit" [(ngModel)]="rentalData.hourInit" required>
 
             <label>Hora Final</label>
-            <input class="item" type="time" name="hourFinal" [(ngModel)]="rentalData.hourFinal" placeholder="" required>
+            <input class="item" type="time" name="hourFinal" [(ngModel)]="rentalData.hourFinal" required>
 
             <label>Correo Electronico</label>
-            <input class="item"  type="email" name="email" [(ngModel)]="rentalData.email" placeholder="" required>
+            <input class="item"  type="email" name="email" [(ngModel)]="rentalData.email" required>
+
             <label>Número de Teléfono</label>
-            <input class="item" type="text" name="phone" [(ngModel)]="rentalData.phone" placeholder="" required>
+            <input class="item" type="text" name="phone" [(ngModel)]="rentalData.phone" required>
+
             <label>Observaciones</label>
-            <input class="item" type="text" name="observation" [(ngModel)]="rentalData.observation" placeholder="" required>
+            <input class="item" type="text" name="observation" [(ngModel)]="rentalData.observation">
+
             <label>Monto de Renta</label>
             <input class="item" type="text" name="totalPrice" [(ngModel)]="rentalData.totalPrice" required readonly>
-
         </div>
       </div>
     </mat-card-content>
