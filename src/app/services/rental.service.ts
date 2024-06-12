@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
-import { Subject, throwError, catchError, tap } from 'rxjs';
+import { throwError, Observable } from 'rxjs';
+import { catchError } from 'rxjs/operators';
 import { RentalData } from '../models/rental.models';
 import { environment } from 'src/environments/environment.prod';
-import { Observable } from 'rxjs';
 import { ApiResponse } from '../models/api-response.model';
 
 @Injectable({
@@ -13,9 +13,9 @@ export class RentalService {
 
   private baseUrl = environment.baseURL;
 
-  private userData;
-  private token ;
-  private headers;
+  private userData: string | null;
+  private token: string | null;
+  private headers: HttpHeaders;
 
   constructor(private http: HttpClient) {
     this.userData = localStorage.getItem('userData');
@@ -34,7 +34,8 @@ export class RentalService {
 
   registerRental(rentalData: any): Observable<any> {
     const url = `${this.baseUrl}/rental/registerRental`;
-    return this.http.post(url, rentalData, { headers: this.headers });
+    return this.http.post(url, rentalData, { headers: this.headers })
+      .pipe(catchError(this.handleError));
   }
 
   getRentByStudent(student: string): Observable<ApiResponse<RentalData[]>> {
@@ -84,5 +85,4 @@ export class RentalService {
       .get<ApiResponse<RentalData[]>>(`${this.baseUrl}/rental/search/${student}`, { headers: this.headers })
       .pipe(catchError(this.handleError));
   }
-
 }
