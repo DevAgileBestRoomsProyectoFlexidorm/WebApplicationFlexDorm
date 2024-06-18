@@ -1,0 +1,23 @@
+.stats-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .stat-card {
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 20px;
+  }
+  
+  .stat-title {
+    text-align: start;
+    margin-bottom: 10px;
+  }
+  
+  .stat-content {
+    text-align: center;
+    font-size: 1.5em;
+  }
+  

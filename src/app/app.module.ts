@@ -22,6 +22,7 @@ import { ReservasStudentComponent } from './components/reservas-student/reservas
 import { ReservasArrenderComponent } from './components/reservas-arrender/reservas-arrender.component';
 import { MovimentArrenderComponent } from './components/moviment-arrender/moviment-arrender.component';
 import { MovimentStudentComponent } from './components/moviment-student/moviment-student.component';
+import { StatisticsArrenderComponent } from './components/statistics-arrender/statistics-arrender.component';
 
 
 @NgModule({
@@ -40,7 +41,8 @@ import { MovimentStudentComponent } from './components/moviment-student/moviment
     ReservasStudentComponent,
     ReservasArrenderComponent,
     MovimentArrenderComponent,
-    MovimentStudentComponent
+    MovimentStudentComponent,
+    StatisticsArrenderComponent
 
   ],
   imports: [

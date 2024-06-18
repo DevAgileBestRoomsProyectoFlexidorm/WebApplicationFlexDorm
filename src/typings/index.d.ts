@@ -18,3 +18,6 @@ export interface AccountData {
   password: string;
   profilePicture: string;
 }
+
+// Declaración global de ApexCharts
+declare var ApexCharts: any;
