@@ -52,6 +52,13 @@
         <mat-icon class="colorIcon">wallet</mat-icon>
         <a mat-list-item routerLink="/moviment/student">Mis Movimientos</a>
       </div>
+
+      <!-- Sección Mis Estadísticas -->
+      <div class="nav-item" routerLinkActive="is-active" *ngIf="arrenderNav" >
+        <mat-icon class="colorIcon">bar_chart</mat-icon>
+        <a mat-list-item routerLink="/statistics/arrender">Mis Estadísticas</a>
+      </div>
+
       <div class="nav-item" routerLinkActive="is-active" (click)="drawer.toggle()" (click)="logout()">
         <mat-icon class="colorIcon">power_settings_new</mat-icon>
         <a mat-list-item  routerLink="/login">Log Out</a>
