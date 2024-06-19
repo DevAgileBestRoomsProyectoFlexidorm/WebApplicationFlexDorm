@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Chart, registerables } from 'chart.js';
-import { ChartOptions, ChartType, ChartData } from 'chart.js';
-
+import { Chart } from 'chart.js';
 
 @Component({
   selector: 'app-statistics-arrender',
@@ -12,39 +10,50 @@ export class StatisticsArrenderComponent implements OnInit {
 
   ingresos: number = 0;
   reservas: number = 0;
-
-  public barChartOptions = {
-    responsive: true,
-    scales: {
-      x: {
-        title: {
-          display: true,
-          text: 'Día de la Semana'
-        }
-      },
-      y: {
-        title: {
-          display: true,
-          text: 'Cantidad de Reservas'
-        },
-        beginAtZero: true
-      }
-    }
-  };
-
-  public barChartLabels: string[] = ['Lun', 'Mar', 'Mie', 'Jue', 'Vie', 'Sab', 'Dom'];
-  public barChartType = 'bar'; 
-  public barChartLegend = true;
-  public barChartData = [
-    { data: [10, 41, 35, 51, 49, 62, 69], label: 'Reservas' }
-  ];
+  public chart: any ;
 
   constructor() {
-    Chart.register(...registerables);
+  
   }
 
   ngOnInit(): void {
-   
+   this.createChart();
   }
 
-}
+  createChart(){
+        this.chart = new Chart("MyChart", {
+        type: 'bar', // Tipo de gráfico
+  
+        data: {
+          labels: ['Lun', 'Mar', 'Mie', 'Jue', 'Vie', 'Sab', 'Dom'], // Etiquetas en el eje X
+          datasets: [
+            {
+              label: "Reservas",
+              data: [10, 41, 35, 51, 49, 62, 69], // Datos
+              backgroundColor: 'blue'
+            }
+          ]
+        },
+        options: {
+          scales: {
+            x: {
+              title: {
+                display: true,
+                text: 'Día de la Semana'
+              }
+            },
+            y: {
+              title: {
+                display: true,
+                text: 'Cantidad de Reservas'
+              },
+              beginAtZero: true
+            }
+          },
+          responsive: true,
+          aspectRatio: 2.5
+        }
+      });
+    }
+  
+  }
