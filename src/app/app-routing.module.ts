@@ -11,6 +11,7 @@ import { ReservasStudentComponent } from './components/reservas-student/reservas
 import { ReservasArrenderComponent } from './components/reservas-arrender/reservas-arrender.component';
 import { MovimentStudentComponent } from './components/moviment-student/moviment-student.component';
 import { MovimentArrenderComponent } from './components/moviment-arrender/moviment-arrender.component';
+import { StatisticsArrenderComponent } from './components/statistics-arrender/statistics-arrender.component';
 
 //se definen las rutas de la aplicacion
 const routes: Routes = [
@@ -25,6 +26,7 @@ const routes: Routes = [
   {path: 'moviment/arrender',component:MovimentArrenderComponent},
   { path:'favorites', component: FavoriteListComponent },
   { path: 'profile', component: ProfileComponent },
+  {path: 'statistics/arrender', component:StatisticsArrenderComponent},
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: '**', redirectTo: '/login', pathMatch: 'full' }, //?-> cualquier otra ruta que no este definida, me redirige al /home
 ];

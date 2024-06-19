@@ -18,3 +18,4 @@ export interface AccountData {
   password: string;
   profilePicture: string;
 }
+
