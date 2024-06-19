@@ -4,7 +4,7 @@ import { RoomModel } from 'src/app/models/room.model';
 import { ActivatedRoute } from '@angular/router';
 import { RentalService } from 'src/app/services/rental.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
-
+declare var paypal: any;
 
 @Component({
   selector: 'app-room-detail',
@@ -17,7 +17,7 @@ export class RoomDetailComponent  {
   volver(): void {
     this.return = true;
   }
-
+  pasarela=true;
   roomData: RoomModel [] = [];
   finalPriceRoom: number | undefined = undefined;
   photoImage:string|undefined=undefined;
@@ -34,6 +34,7 @@ export class RoomDetailComponent  {
     }
     console.log(this.roomId);
     this.getRoomByID(this.roomId);
+    this.pasarela=false
   }
   getRoomByID(roomId: number|null) {
     this.roomsService.getRoomsList(roomId).subscribe({
@@ -76,6 +77,58 @@ export class RoomDetailComponent  {
     );
   }
 
+  submitPrecio(rentalData: any) {
+    debugger;
+    const horaSeleccionada = this.rentalData.hourInit;
+    const [hora, minuto] = horaSeleccionada.split(':');
+    const horaSeleccionada2 = this.rentalData.hourFinal;
+    const [hora2, minuto2] = horaSeleccionada.split(':');
+    const date1=this.rentalData.date
+    const date2=this.rentalData.date2
+    const hourinit= this.convertirHoraASegundos(this.rentalData.hourInit)
+    const hourFinal = this.convertirHoraASegundos(this.rentalData.hourFinal)
+      // Convertir las fechas a objetos Date
+      const date1WithTime = new Date(date1);
+      const date2WithTime = new Date(date2);
+
+      // Añadir las horas iniciales y finales a las fechas
+      date1WithTime.setSeconds(hourinit);
+      date2WithTime.setSeconds(hourFinal);
+
+      // Calcular la diferencia en milisegundos
+      const timeDifference = date2WithTime.getTime() - date1WithTime.getTime();
+
+      // Convertir la diferencia a horas
+      const totalHours = timeDifference / (1000 * 60 * 60);
+
+      console.log(`Total time: ${totalHours} hours`);
+    const resulthour = this.convertirSegundosAHorasDecimal(hourFinal-hourinit)
+    if(minuto !== '00' || minuto2 !== '00')
+    {
+      this.pasarela=false;
+      this.openSnackBar('Solo podras elegir entre rangos de hora','Ok')
+    }else
+    if(hourinit>hourFinal)
+    {
+      this.pasarela=false;
+      this.openSnackBar('La fecha final debe ser mayor a la inicial','Ok')
+    }else{
+      const studentId = localStorage.getItem('userId');
+      const longStudent = studentId ? parseInt(studentId, 10) : 0;
+      this.rentalData.student=longStudent,
+      this.rentalData.room=this.roomId,
+      this.rentalData.totalPrice = (this.finalPriceRoom ?? 0) * totalHours;
+      this.rentalData.imageUrl=this.photoImage;
+      this.rentalData.arrender=this.arrenderId
+      this.rentalData.arrenderId=this.arrenderId
+      this.rentalData.moviment="false"
+      this.pasarela=true;
+      this.loadPaypalScript().then(() => {
+        this.initPayPalButton(rentalData);
+      });
+
+    }
+  }
 
   submitReservation(rentalData: any) {
     const horaSeleccionada = this.rentalData.hourInit;
@@ -108,19 +161,69 @@ export class RoomDetailComponent  {
           console.log('Alquiler registrado con éxito:', response);
           this.openSnackBar('Tu renta se registro correctamente', 'Ok')
           setTimeout(() => {
-            window.location.href = 'rental/student';
+            // window.location.href = 'rental/student';
           }, 2000);
         },
         (error) => {
           console.error('Error al registrar el alquiler:', error);
         }
       );
-
-
     }
   }
 
+  private loadPaypalScript(): Promise<any> {
+    return new Promise((resolve, reject) => {
+      const scriptElement = document.createElement('script');
+      scriptElement.src = 'https://www.paypal.com/sdk/js?client-id=AURR1Bo6su6uaQLVRVwLRkxownm1PWnC1CaaLK9V3S2yz0-RiqLOqKS2LYDLzDezGqLvEutMQJMp2iHB';
+      scriptElement.onload = resolve;
+      document.body.appendChild(scriptElement);
+    });
+  }
 
+    continuar(rentalData: any){
+      console.log(this.rentalData.fecha)
+      this.getRoomByID(this.roomId);
+      this.submitPrecio(rentalData);
+    }
+
+
+  initPayPalButton(rentalData:any) {
+    paypal.Buttons({
+      createOrder: (data:any, actions:any) => {
+        return actions.order.create({
+          purchase_units: [{
+            amount: {
+              value: rentalData.totalPrice // Aquí pones el valor de la transacción
+            }
+          }]
+        });
+      },
+      onApprove: (data:any, actions:any) => {
+        return actions.order.capture().then((details:any) => {
+          // alert('Transaction completed by ' + details.payer.name.given_name);
+
+          this.rentalService.registerRental(rentalData).subscribe(
+            (response) => {
+              console.log('Alquiler registrado con éxito:', response);
+              this.openSnackBar('Tu renta se registro correctamente', 'Ok')
+              setTimeout(() => {
+                window.location.href = 'rental/student';
+              }, 2000);
+            },
+            (error) => {
+              console.error('Error al registrar el alquiler:', error);
+            }
+          );
+        });
+
+
+      },
+      onError: (err:any) => {
+        console.error(err);
+        // Aquí puedes manejar errores
+      }
+    }).render('#paypal-button-container');
+  }
 
     /**
    * Abre la alerta de snackbar

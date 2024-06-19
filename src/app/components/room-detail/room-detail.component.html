@@ -1,51 +1,84 @@
 <div *ngIf="roomData && roomData.length > 0" class="container responsive-grid">
   <mat-card class="full-card">
-    <form (ngSubmit)="submitReservation(rentalData)">
-    <mat-card-content class="content-container">
-      <div class="title-section">
-        <h1>{{ roomData[0].title }}</h1>
-        <h5>
-          {{ roomData[0].description }}
-          &nbsp;
-          <mat-icon class="mat-icon-color">payments</mat-icon>
-          &nbsp; S/ <span class="mat-icon-color">{{ roomData[0].price }}</span> / hora
-        </h5>
-      </div>
-      <div class="container">
-        <div class="align-center">
-          <img mat-card-image [src]="roomData[0].imageUrl" loading="lazy" width="400" height="300" />
+    <form (ngSubmit)="continuar(rentalData)" #reservationForm="ngForm">
+      <mat-card-content class="content-container">
+        <div class="title-section">
+          <h1>{{ roomData[0].title }}</h1>
+          <h5>
+            {{ roomData[0].description }}
+            &nbsp;
+            <mat-icon class="mat-icon-color">payments</mat-icon>
+            &nbsp; S/ <span class="mat-icon-color">{{ roomData[0].price }}</span> / hora
+          </h5>
         </div>
+        <div class="container">
+          <div class="align-center">
+            <img mat-card-image [src]="roomData[0].imageUrl" loading="lazy" width="400" height="300" />
+          </div>
 
-        <div class="info-section">
+          <div class="info-section">
 
-            <label>Fecha de Renta</label>
-            <input class="item" type="date" name="date" [(ngModel)]="rentalData.date" required>
+            <label>Fecha Inicial</label>
+            <input class="item" type="date" name="date" [(ngModel)]="rentalData.date" #date="ngModel" required>
+            <div *ngIf="date.invalid && (date.dirty || date.touched)" class="error-message">
+              Fecha de Inicial es requerida.
+            </div>
 
-              <label>Hora Inicio</label>
-              <input class="item" type="time" name="hourInit" [(ngModel)]="rentalData.hourInit" placeholder="" required>
+
+            <label>Fecha Final</label>
+            <input class="item" type="date" name="date2" [(ngModel)]="rentalData.date2" #date2="ngModel" required>
+            <div *ngIf="date2.invalid && (date2.dirty || date2.touched)" class="error-message">
+              Fecha de Final es requerida.
+            </div>
+
+            <label>Hora Inicio</label>
+            <input class="item" type="time" name="hourInit" [(ngModel)]="rentalData.hourInit" #hourInit="ngModel" required>
+            <div *ngIf="hourInit.invalid && (hourInit.dirty || hourInit.touched)" class="error-message">
+              Hora Inicio es requerida.
+            </div>
 
             <label>Hora Final</label>
-            <input class="item" type="time" name="hourFinal" [(ngModel)]="rentalData.hourFinal" placeholder="" required>
+            <input class="item" type="time" name="hourFinal" [(ngModel)]="rentalData.hourFinal" #hourFinal="ngModel" required>
+            <div *ngIf="hourFinal.invalid && (hourFinal.dirty || hourFinal.touched)" class="error-message">
+              Hora Final es requerida.
+            </div>
 
             <label>Correo Electronico</label>
-            <input class="item"  type="email" name="email" [(ngModel)]="rentalData.email" placeholder="" required>
+            <input class="item" type="email" name="email" [(ngModel)]="rentalData.email" #email="ngModel" required>
+            <div *ngIf="email.invalid && (email.dirty || email.touched)" class="error-message">
+              Correo Electronico es requerido.
+            </div>
+
             <label>Número de Teléfono</label>
-            <input class="item" type="text" name="phone" [(ngModel)]="rentalData.phone" placeholder="" required>
+            <input class="item" type="text" name="phone" [(ngModel)]="rentalData.phone" #phone="ngModel" required>
+            <div *ngIf="phone.invalid && (phone.dirty || phone.touched)" class="error-message">
+              Número de Teléfono es requerido.
+            </div>
+
             <label>Observaciones</label>
-            <input class="item" type="text" name="observation" [(ngModel)]="rentalData.observation" placeholder="" required>
+            <input class="item" type="text" name="observation" [(ngModel)]="rentalData.observation" #observation="ngModel" required>
+            <div *ngIf="observation.invalid && (observation.dirty || observation.touched)" class="error-message">
+              Observaciones son requeridas.
+            </div>
+
             <label>Monto de Renta</label>
             <input class="item" type="text" name="totalPrice" [(ngModel)]="rentalData.totalPrice" required readonly>
-
+          </div>
         </div>
+      </mat-card-content>
+      <div style="text-align: center;">
+        <a>Horas estimadas desde las 00:00 y 24:00 horas</a>
       </div>
-    </mat-card-content>
-    <div style="text-align: center;">
-      <a>Horas estimadas desde las 00:00 y 24:00 horas</a>
-      </div>
-    <mat-card-actions class="action-container">
-    <button mat-raised-button class="button-purple" type="submit">Reservar</button>
-    <button mat-raised-button class="button-purple" routerLink="/all-rooms">Volver</button>
-  </mat-card-actions>
-  </form>
+      <mat-card-actions class="action-container">
+        <button mat-raised-button class="button-purple" type="submit">Continuar</button>
+        <button mat-raised-button class="button-purple" routerLink="/all-rooms">Volver</button>
+      </mat-card-actions>
+    </form>
+  <div class="info-section2" *ngIf="pasarela">
+    <div style="margin-bottom: 20px;">
+    <a>Realiza el pago aqui:</a>
+    </div>
+    <div id="paypal-button-container" style="width: 400px;"></div>
+  </div>
   </mat-card>
 </div>

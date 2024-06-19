@@ -12,6 +12,11 @@
   .info-section {
     display: flex; /* Utiliza flexbox para alinear los elementos de información en columna */
     flex-direction: column; /* Alinea los elementos en columna */
+    margin-right: 20px;
+  }
+  .info-section2 {
+    display: flex; /* Utiliza flexbox para alinear los elementos de información en columna */
+    flex-direction: column; /* Alinea los elementos en columna */
   }
   .action-container {
     display: flex;
@@ -51,4 +56,9 @@
   }
   .mat-icon-color {
     color: #a070ce !important;; /* Cambia el color de los iconos a morado */
+  }
+  .error-message {
+    color: red;
+    font-size: 0.875em;
+    margin-top: 5px;
   }
