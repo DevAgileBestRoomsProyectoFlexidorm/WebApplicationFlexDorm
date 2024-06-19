@@ -1,26 +1,33 @@
 <div class="stats-container">
-    <!-- Tarjeta de Reservas -->
-    <mat-card class="stat-card">
-      <mat-card-content>
-        <div class="stat-title">
-          <h2>Reservas</h2>
+  <!-- Tarjeta de Reservas -->
+  <mat-card class="stat-card">
+    <mat-card-content>
+      <div class="stat-title">
+        <h2>Reservas</h2>
+      </div>
+      <div class="chart-wrapper">
+        <div style="display: block;">
+          <canvas baseChart
+                  [datasets]="barChartData"
+                  [labels]="barChartLabels"
+                  [options]="barChartOptions"
+                  [legend]="barChartLegend"
+                  [chartType]="barChartType">
+          </canvas>
         </div>
-        <div class="stat-content">
-        <!-- <p>{{ reservas }}</p> --> 
-        </div>
-      </mat-card-content>
-    </mat-card>
-    
-    <!-- Tarjeta de Ingresos -->
-    <mat-card class="stat-card">
-      <mat-card-content>
-        <div class="stat-title">
-          <h2>Ingresos</h2>
-        </div>
-        <div class="stat-content">
-         <!-- <p>{{ ingresos | currency }}</p>--> 
-        </div>
-      </mat-card-content>
-    </mat-card>
-  </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
   
+  <!-- Tarjeta de Ingresos -->
+  <mat-card class="stat-card">
+    <mat-card-content>
+      <div class="stat-title">
+        <h2>Ingresos</h2>
+      </div>
+      <div class="stat-content">
+       <!-- <p>{{ ingresos | currency }}</p>--> 
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

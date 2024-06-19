@@ -23,6 +23,7 @@ import { ReservasArrenderComponent } from './components/reservas-arrender/reserv
 import { MovimentArrenderComponent } from './components/moviment-arrender/moviment-arrender.component';
 import { MovimentStudentComponent } from './components/moviment-student/moviment-student.component';
 import { StatisticsArrenderComponent } from './components/statistics-arrender/statistics-arrender.component';
+import { NgChartsModule } from 'ng2-charts';
 
 
 @NgModule({
@@ -53,7 +54,10 @@ import { StatisticsArrenderComponent } from './components/statistics-arrender/st
     HttpClientModule,
     RouterModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgChartsModule,
+
+
   ],
   providers: [],
   bootstrap: [AppComponent]
