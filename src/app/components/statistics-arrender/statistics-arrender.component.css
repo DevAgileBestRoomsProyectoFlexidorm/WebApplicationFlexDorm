@@ -7,17 +7,37 @@
   
   .stat-card {
     width: 100%;
-    max-width: 400px;
+    max-width: 900px;
     margin-bottom: 20px;
+    padding: 10px;
   }
   
   .stat-title {
     text-align: start;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
   }
   
   .stat-content {
     text-align: center;
     font-size: 1.5em;
   }
+
+  .chart-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 800px;
+    height: 400px;
+    padding: 10px; 
+  }
+
+  canvas {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  } 
+
+
+
   
