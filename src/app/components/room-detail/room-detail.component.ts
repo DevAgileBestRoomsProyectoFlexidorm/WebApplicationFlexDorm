@@ -107,11 +107,6 @@ export class RoomDetailComponent  {
     {
       this.pasarela=false;
       this.openSnackBar('Solo podras elegir entre rangos de hora','Ok')
-    }else
-    if(hourinit>hourFinal)
-    {
-      this.pasarela=false;
-      this.openSnackBar('La fecha final debe ser mayor a la inicial','Ok')
     }else{
       const studentId = localStorage.getItem('userId');
       const longStudent = studentId ? parseInt(studentId, 10) : 0;
@@ -142,10 +137,6 @@ export class RoomDetailComponent  {
     if(minuto !== '00' || minuto2 !== '00')
     {
       this.openSnackBar('Solo podras elegir entre rangos de hora','Ok')
-    }else
-    if(hourinit>hourFinal)
-    {
-      this.openSnackBar('La fecha final debe ser mayor a la inicial','Ok')
     }else{
       const studentId = localStorage.getItem('userId');
       const longStudent = studentId ? parseInt(studentId, 10) : 0;

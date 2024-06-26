@@ -1,0 +1,34 @@
+<div class="container">
+  <mat-card>
+  <h2>HABITACIONES EXISTENTES</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Titulo</th>
+        <th>Descripcion</th>
+        <th>Direccion</th>
+        <th>Precio</th>
+        <th>ID Propietario</th>
+        <th>Estado</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let rooms of rooms">
+        <td data-label="User ID">{{ rooms.roomId}}</td>
+        <td data-label="First Name">{{ rooms.title }}</td>
+        <td data-label="Last Name">{{ rooms.description }}</td>
+        <td data-label="Username">{{ rooms.address }}</td>
+        <td data-label="Phone Number">{{ rooms.price }}</td>
+        <td data-label="Email">{{ rooms.arrenderId }}</td>
+        <td data-label="Is Active">
+          <label class="switch">
+            <input type="checkbox"  [(ngModel)]="rooms.active" (change)="toggleAccountStatus(rooms)">
+            <span class="slider round"></span>
+          </label>
+        </td>
+      </tr>
+    </tbody>
+    </table>
+</mat-card>
+</div>

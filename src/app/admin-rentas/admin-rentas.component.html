@@ -1,0 +1,33 @@
+<div class="container">
+  <mat-card>
+  <h2>RENTAS EXISTENTES</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>FECHA</th>
+        <th>PRECIO TOTAL</th>
+        <th>ID ESTUDIANTE</th>
+        <th>ID ARRENDADOR</th>
+        <th>ID HABITACION</th>
+        <th>HORA INICIAL</th>
+        <th>HORA FINAL</th>
+        <th>IMAGEN</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let rental of rental">
+        <td data-label="User ID">{{ rental.reservationId }}</td>
+        <td data-label="First Name">{{ rental.date }}</td>
+        <td data-label="Last Name">{{ rental.totalPrice }}</td>
+        <td data-label="Username">{{ rental.student }}</td>
+        <td data-label="Phone Number">{{ rental.arrenderId }}</td>
+        <td data-label="Email">{{ rental.room }}</td>
+        <td data-label="Address">{{ rental.hourInit }}</td>
+        <td data-label="Birth Date">{{ rental.hourFinal }}</td>
+        <td data-label="Picture"><img [src]="rental.imageUrl" alt="Profile Picture" width="100" height="100"/></td>
+      </tr>
+    </tbody>
+    </table>
+</mat-card>
+</div>

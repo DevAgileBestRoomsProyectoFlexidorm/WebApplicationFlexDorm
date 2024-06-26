@@ -24,6 +24,9 @@ import { MovimentArrenderComponent } from './components/moviment-arrender/movime
 import { MovimentStudentComponent } from './components/moviment-student/moviment-student.component';
 import { StatisticsArrenderComponent } from './components/statistics-arrender/statistics-arrender.component';
 import { NgChartsModule } from 'ng2-charts';
+import { AdminUsersComponent } from './admin-users/admin-users.component';
+import { AdminRoomsComponent } from './admin-rooms/admin-rooms.component';
+import { AdminRentasComponent } from './admin-rentas/admin-rentas.component';
 
 
 @NgModule({
@@ -43,7 +46,10 @@ import { NgChartsModule } from 'ng2-charts';
     ReservasArrenderComponent,
     MovimentArrenderComponent,
     MovimentStudentComponent,
-    StatisticsArrenderComponent
+    StatisticsArrenderComponent,
+    AdminUsersComponent,
+    AdminRoomsComponent,
+    AdminRentasComponent
 
   ],
   imports: [

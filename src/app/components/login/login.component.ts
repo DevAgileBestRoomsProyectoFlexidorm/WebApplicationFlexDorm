@@ -28,7 +28,7 @@ export class LoginComponent {
           this.router.navigate(['/profile']);
         } else {
           // Mostrar mensaje de error
-          this.openSnackBar('El usuario o contraseña es incorrecto', 'OK');
+
         }
       },
       error: (err) => {

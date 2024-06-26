@@ -16,10 +16,11 @@ export class Account {
   isEnabled:boolean;
   token: string;
   message: string;
+  active:boolean;
 
   constructor(userId: number, firstname: string, lastname: string, username: string, phoneNumber: string, email: string,
     address: string, profilePicture: string, password: string, dtype: Dtype, birthDate: string,
-    gender: string, university: string, isVerified: boolean, isEnabled: boolean, token: string, message:string) {
+    gender: string, university: string, isVerified: boolean, isEnabled: boolean, token: string, message:string,active:boolean) {
     this.userId = userId;
     this.firstname = firstname;
     this.lastname = lastname;
@@ -37,6 +38,7 @@ export class Account {
     this.isEnabled = isEnabled;
     this.token = token;
     this.message=message;
+    this.active=active;
     }
 
 }
@@ -44,4 +46,5 @@ export class Account {
 export enum Dtype {
   Student = 'Student',
   Arrender = 'Arrender',
+  Admin = 'Admin',
 }

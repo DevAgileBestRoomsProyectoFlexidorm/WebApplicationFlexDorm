@@ -20,7 +20,6 @@ export class HeaderComponent {
   isLoginPage: boolean = false;
 
   constructor(private router: Router, private authService:AuthService, private profileService:ProfileService) {
-
     // Suscribirse a eventos de cambio de ruta
     router.events.subscribe((event) => {
       const type=localStorage.getItem('type')
@@ -28,10 +27,17 @@ export class HeaderComponent {
         case 'Student':
           this.studentNav=true;
           this.arrenderNav=false;
+          this.adminNav=false;
         break;
         case 'Arrender':
           this.arrenderNav=true;
           this.studentNav=false;
+          this.adminNav=false;
+          break;
+        case 'User':
+          this.arrenderNav=false;
+          this.studentNav=false;
+          this.adminNav=true;
           break;
 
       }
@@ -45,6 +51,7 @@ export class HeaderComponent {
 
   studentNav=false;
   arrenderNav=false;
+  adminNav=false;
 
   ngOnInit(): void {
   }

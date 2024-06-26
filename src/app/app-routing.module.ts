@@ -12,6 +12,9 @@ import { ReservasArrenderComponent } from './components/reservas-arrender/reserv
 import { MovimentStudentComponent } from './components/moviment-student/moviment-student.component';
 import { MovimentArrenderComponent } from './components/moviment-arrender/moviment-arrender.component';
 import { StatisticsArrenderComponent } from './components/statistics-arrender/statistics-arrender.component';
+import { AdminRoomsComponent } from './admin-rooms/admin-rooms.component';
+import { AdminUsersComponent } from './admin-users/admin-users.component';
+import { AdminRentasComponent } from './admin-rentas/admin-rentas.component';
 
 //se definen las rutas de la aplicacion
 const routes: Routes = [
@@ -27,6 +30,9 @@ const routes: Routes = [
   { path:'favorites', component: FavoriteListComponent },
   { path: 'profile', component: ProfileComponent },
   {path: 'statistics/arrender', component:StatisticsArrenderComponent},
+  {path: 'admin/adminRooms', component:AdminRoomsComponent},
+  {path: 'admin/adminUsers', component:AdminUsersComponent},
+  {path: 'admin/adminRentas', component:AdminRentasComponent},
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: '**', redirectTo: '/login', pathMatch: 'full' }, //?-> cualquier otra ruta que no este definida, me redirige al /home
 ];

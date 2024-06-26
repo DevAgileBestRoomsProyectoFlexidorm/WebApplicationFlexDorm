@@ -11,4 +11,5 @@ export interface RentalData {
   observation:string;
   favorite:string;
   moviment:string;
+  arrenderId:string;
 }

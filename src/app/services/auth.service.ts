@@ -6,15 +6,16 @@ import { catchError, map, switchMap, tap } from 'rxjs/operators';
 import { ApiResponse } from '../models/api-response.model';
 import { environment } from 'src/environments/environment';
 import { ApiResponseStatus } from '../models/api-response.model';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
   private loggedIn = false;
-  
 
-  constructor(private http: HttpClient) {}
+
+  constructor(private http: HttpClient,private _snackBar: MatSnackBar) {}
 
   /**
    * Realiza la solicitud HTTP para iniciar sesión en la aplicación
@@ -27,6 +28,7 @@ export class AuthService {
       })
       .pipe(
         map((response) => {
+          var mensaje=response.data.message;
           // Verifica si la respuesta es exitosa
           if (response.status === ApiResponseStatus.Success) {
             // Si las credenciales son correctas, guarda la información del usuario en el localStorage
@@ -40,6 +42,9 @@ export class AuthService {
           } else {
             console.error('Error en la solicitud HTTP:', response);
             this.loggedIn = false;
+
+            this.openSnackBar(response.data.message.toString(), 'OK');
+
             return false;
           }
         }),
@@ -81,4 +86,13 @@ export class AuthService {
   }
 
   setLocalStorage() {}
+
+    /**
+   * Abre la alerta de snackbar
+   * @param message Mensaje a mostrar
+   * @param action Acción
+   */
+    openSnackBar(message: string, action?: string) {
+      this._snackBar.open(message, action, { duration: 5_000 });
+    }
 }

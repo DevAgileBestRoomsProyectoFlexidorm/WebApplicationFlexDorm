@@ -15,4 +15,5 @@ export interface RoomModel {
   email: string;
   phone: string;
   shortDescription: string;
+  active:boolean;
 }
