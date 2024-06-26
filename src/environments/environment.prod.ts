@@ -1,4 +1,4 @@
 export const environment = {
   development: true,
-  baseURL: 'http://localhost:8081/api/v1'
+  baseURL: 'https://respectful-emotion-production.up.railway.app/api/v1'
 };
